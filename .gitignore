@@ -1,0 +1,7 @@
+.DS_Store
+*.asv
+*.m~
+audio_out/*
+!audio_out/.gitkeep
+results/*
+!results/.gitkeep
