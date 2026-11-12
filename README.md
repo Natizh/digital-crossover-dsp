@@ -31,19 +31,13 @@ The plots below are generated from the project's MATLAB code. Each shows the low
 
 ![FIR and IIR summed-path group delay against frequency](figures/Fig05_sum_gd.png)
 
-The FIR summed path has constant delay; the IIR summed path has a frequency-dependent delay. The accompanying time-domain comparison uses the input signal as the FIR reference and also evaluates the IIR output against its *equivalent sum-path filtered reference* rather than treating a simple delay as the correct IIR target.
-
-![Time-domain reconstruction error, including the IIR equivalent sum-path reference](figures/Fig07_err_noEQ.png)
+The FIR summed path has constant delay; the IIR summed path has a frequency-dependent delay. The time-domain analysis compares FIR reconstruction to the input and IIR reconstruction to its *equivalent sum-path filtered reference*, not just a shifted input. See the [reconstruction-error plot](figures/Fig07_err_noEQ.png) for the detailed comparison.
 
 ## Audio processing & per-band EQ
 
 Both designs split an input WAV file into **low**, **high**, and **summed** outputs. Optional independent gain on each band illustrates how a crossover can be paired with simple driver-level balancing. The default EQ example applies **+5 dB** to the low band and **−3 dB** to the high band.
 
-| FIR — spectra with per-band EQ | IIR — spectra with per-band EQ |
-|:---:|:---:|
-| ![FIR input and band power spectra with EQ enabled](figures/Fig12_FIR_spectra_EQ_bass_pulse.png) | ![IIR input and band power spectra with EQ enabled](figures/Fig13_IIR_spectra_EQ_bass_pulse.png) |
-
-The spectrum plots compare the input with the summed and individual band outputs. **With EQ enabled, the two branches are deliberately reweighted; the no-EQ reconstruction properties should not be assumed to hold unchanged.**
+The [FIR](figures/Fig12_FIR_spectra_EQ_bass_pulse.png) and [IIR](figures/Fig13_IIR_spectra_EQ_bass_pulse.png) EQ spectrum plots compare the input with the summed and individual band outputs. **With EQ enabled, the two branches are deliberately reweighted; the no-EQ reconstruction properties should not be assumed to hold unchanged.**
 
 ## Explore or reproduce
 
